@@ -8,12 +8,16 @@ const Statistics = (props) => {
 
   return (
     <div>
-      <Statistic text="good" value={props.good} />
-      <Statistic text="neutral" value={props.neutral} />
-      <Statistic text="bad" value={props.bad} />
-      <Statistic text="all" value={sum} />
-      <Statistic text="average" value={average} />
-      <Statistic text="positive" value={positive + " %"} />
+      <table>
+        <tbody>
+          <Statistic text="good" value={props.good} />
+          <Statistic text="neutral" value={props.neutral} />
+          <Statistic text="bad" value={props.bad} />
+          <Statistic text="all" value={sum} />
+          <Statistic text="average" value={average} />
+          <Statistic text="positive" value={positive + " %"} />
+        </tbody>
+      </table>
     </div>
   );
 };
@@ -22,9 +26,10 @@ const Statistic = (props) => {
   console.log(props);
   return (
     <>
-      <p>
-        {props.text} {props.value}
-      </p>
+      <tr>
+        <td>{props.text}</td>
+        <td>{props.value}</td>
+      </tr>
     </>
   );
 };
